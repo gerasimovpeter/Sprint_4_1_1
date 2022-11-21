@@ -4,11 +4,10 @@ import org.junit.After;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.chrome.ChromeDriver;
 @RunWith(Parameterized.class)
-public class Praktikum {
+public class ZakazSamokataKnopkaVerh {
     private WebDriver driver;
     private final String name;
     private final String surname;
@@ -19,7 +18,7 @@ public class Praktikum {
 
 
 
-    public Praktikum(String name, String surname, String address, String telephone, String whenBringScooter , String сommentForCourier) {
+    public ZakazSamokataKnopkaVerh(String name, String surname, String address, String telephone, String whenBringScooter , String сommentForCourier) {
         this.name  = name ;
         this.surname = surname;
         this.address = address;
@@ -34,20 +33,19 @@ public class Praktikum {
     public static Object[][] getZakaz() {
         return new Object[][]{
                 { "Иван", "Иванов", "Москва", "89603512525", "23.12.2022", "Быстрее"},
-                {"Петр", "Петров", "Реутов", "89603512544", "22.12.2022", "Не спешите"},
         };
     }
 
     @Test
     public void test() {
-        //driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
         // создаем объект класса главной страницы приложения
         HomePageSamokat objHomePage = new HomePageSamokat(driver);
         // дождаемся загрузки данных профиля на главной странице
         objHomePage.waitForLoadProfileTitle();
-        objHomePage.clickZakazButton();
+        objHomePage.clickZakazButtonVerh();
         OrderPage objOrderPage = new OrderPage(driver);
         objOrderPage.SetNameSurname(name, surname);
         objOrderPage.SetAddress(address);
