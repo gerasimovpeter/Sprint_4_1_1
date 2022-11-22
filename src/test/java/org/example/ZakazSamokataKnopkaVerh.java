@@ -17,7 +17,6 @@ public class ZakazSamokataKnopkaVerh {
     private final String сommentForCourier;
 
 
-
     public ZakazSamokataKnopkaVerh(String name, String surname, String address, String telephone, String whenBringScooter , String сommentForCourier) {
         this.name  = name ;
         this.surname = surname;
@@ -28,7 +27,6 @@ public class ZakazSamokataKnopkaVerh {
 
     }
 
-
     @Parameterized.Parameters
     public static Object[][] getZakaz() {
         return new Object[][]{
@@ -38,8 +36,8 @@ public class ZakazSamokataKnopkaVerh {
 
     @Test
     public void test() {
-        driver = new ChromeDriver();
-        //driver = new FirefoxDriver();
+          driver = new ChromeDriver();
+        // driver = new FirefoxDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
         // создаем объект класса главной страницы приложения
         HomePageSamokat objHomePage = new HomePageSamokat(driver);
@@ -60,9 +58,8 @@ public class ZakazSamokataKnopkaVerh {
         objOrderPage.ClickButtonYes();
         objOrderPage.CheckOderStatusCompleted();
     }
-
     @After
     public void teardown() {
-       // driver.quit();
+        driver.quit();
     }
 }

@@ -4,10 +4,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 public class OrderPage {
     private WebDriver driver;
-
     //  локатор для Имя
     private By name = By.xpath("//input[@placeholder='* Фамилия']");
     //  локатор для Фамилия
@@ -33,7 +31,7 @@ public class OrderPage {
     //  локатор для комментария курьера
     private By сommentForCourier = By.xpath("//input[@placeholder='Комментарий для курьера']");
     //  локатор для кнопки "заказать"
-    private By buttonOrder = By.xpath("/html/body/div/div/div[2]/div[3]/button[2]");
+    private By buttonOrder = By.xpath(".//div[@class='Order_Buttons__1xGrp']//*[text()='Заказать']");
     //  локатор для кнопки подтверждения заказа
     private By buttonYes = By.xpath("//button[text()='Да']");
     //  локатор для статуса оформления заказа
@@ -102,6 +100,5 @@ public class OrderPage {
     public void CheckOderStatusCompleted() {
         driver.findElement(orderStatusCompleted).isEnabled();
     }
-
 
 }

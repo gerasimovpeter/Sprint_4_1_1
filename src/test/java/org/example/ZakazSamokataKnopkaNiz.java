@@ -1,5 +1,4 @@
 package org.example;
-
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,8 +16,6 @@ public class ZakazSamokataKnopkaNiz {
     private final String whenBringScooter;
     private final String сommentForCourier;
 
-
-
     public ZakazSamokataKnopkaNiz(String name, String surname, String address, String telephone, String whenBringScooter , String сommentForCourier) {
         this.name  = name ;
         this.surname = surname;
@@ -29,7 +26,6 @@ public class ZakazSamokataKnopkaNiz {
 
     }
 
-
     @Parameterized.Parameters
     public static Object[][] getZakaz() {
         return new Object[][]{
@@ -39,8 +35,8 @@ public class ZakazSamokataKnopkaNiz {
 
     @Test
     public void test() {
-        driver = new ChromeDriver();
-       // driver = new FirefoxDriver();
+         driver = new ChromeDriver();
+        //  driver = new FirefoxDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
         // создаем объект класса главной страницы приложения
         HomePageSamokat objHomePage = new HomePageSamokat(driver);
@@ -61,9 +57,8 @@ public class ZakazSamokataKnopkaNiz {
         objOrderPage.ClickButtonYes();
         objOrderPage.CheckOderStatusCompleted();
     }
-
     @After
     public void teardown() {
-       // driver.quit();
+       driver.quit();
     }
 }
