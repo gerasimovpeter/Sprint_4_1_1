@@ -42,22 +42,22 @@ public class OrderPage {
         this.driver = driver;
     }
 
-    public void SetNameSurname(String newName, String newSurname) {
+    public void setNameSurname(String newName, String newSurname) {
         driver.findElement(name).isEnabled();
         driver.findElement(name).sendKeys(newName);
         driver.findElement(surname).isEnabled();
         driver.findElement(surname).sendKeys(newSurname);
     }
-    public void SetAddress(String newAddress) {
+    public void setAddress(String newAddress) {
         driver.findElement(address).isEnabled();
         driver.findElement(address).sendKeys(newAddress);
     }
 
-    public void SetTelephone(String newTelephone) {
+    public void setTelephone(String newTelephone) {
         driver.findElement(telephone).isEnabled();
         driver.findElement(telephone).sendKeys(newTelephone);
     }
-    public void SetMetroStation( ) {
+    public void setMetroStation( ) {
         driver.findElement(metroStation).isEnabled();
         WebElement textbox = driver.findElement(metroStation);
         textbox.sendKeys(Keys.ARROW_DOWN);
@@ -67,37 +67,37 @@ public class OrderPage {
         driver.findElement(buttonFurther).click();
     }
 
-    public void SetWhenBringScooter(String newWhenBringScooter) {
+    public void setWhenBringScooter(String newWhenBringScooter) {
         driver.findElement(whenBringScooter).isEnabled();
         driver.findElement(whenBringScooter).sendKeys(newWhenBringScooter);
         WebElement textbox = driver.findElement(whenBringScooter);
         textbox.sendKeys(Keys.ENTER);
     }
-    public void SetRentalPeriod( ) {
+    public void setRentalPeriod( ) {
         driver.findElement(rentalPeriod).isEnabled();
         driver.findElement(rentalPeriod).click();
         driver.findElement(rentalPeriodOption).isEnabled();
         driver.findElement(rentalPeriodOption).click();
 
     }
-    public void SetCommentForCourier(String newCommentForCourier) {
+    public void setCommentForCourier(String newCommentForCourier) {
         driver.findElement(сommentForCourier).isEnabled();
         driver.findElement(сommentForCourier).sendKeys(newCommentForCourier);
     }
 
 
-    public void SetScooterGrayColor() {
+    public void setScooterGrayColor() {
         driver.findElement(scooterGrayColor).isEnabled();
         driver.findElement(scooterGrayColor).click();
     }
 
-    public void ClickButtonOrder(){
+    public void clickButtonOrder(){
         driver.findElement(buttonOrder).click();
     }
-    public void ClickButtonYes(){
+    public void clickButtonYes(){
         driver.findElement(buttonYes).click();
     }
-    public void CheckOderStatusCompleted() {
+    public void checkOderStatusCompleted() {
         driver.findElement(orderStatusCompleted).isEnabled();
     }
 
